@@ -7,6 +7,7 @@ module.exports = merge(baseConfig, {
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -30,13 +31,13 @@ module.exports = merge(baseConfig, {
                         loader: "style-loader"
                     },
                     {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'less-loader',
+                        loader: 'css-loader',
                         options: {
                             sourceMap: true
                         }
+                    },
+                    {
+                        loader: 'less-loader'
                     }
                 ]
             }
